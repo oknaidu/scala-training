@@ -13,31 +13,41 @@ object Exercise extends App {
   /**
    * 2. A factorial function
    */
-  def factorial(n: Int, result: Int = 1): Int = {
-    if (n == 1)
-      return result;
-    else
-      factorial(n - 1, result * n)
+  def factorial(n: Int): Int = {
+    def calculateFactorial(n: Int, result: Int): Int = {
+      if (n == 1)
+        return result;
+      else
+        calculateFactorial(n - 1, result * n)
+    }
+
+    calculateFactorial(n, 1)
   }
 
 
   /**
    * 3. Test if a number is prime
    */
-  def isPrime(n: Int, diviser: Int = 2): Boolean = {
-    if (n == 0 || n == 1)
-      return false;
-    else if (n == 2)
-      return true;
-    else {
-      if (diviser > n / 2)
-        return true;
-      if (n % diviser == 0)
+  def isPrime(n: Int): Boolean = {
+
+    def isPrime(n: Int, deviser: Int): Boolean = {
+      if (n == 0 || n == 1)
         return false;
-      else
-        return isPrime(n, diviser + 1)
+      else if (n == 2)
+        return true;
+      else {
+        if (deviser > n / 2)
+          return true;
+        if (n % deviser == 0)
+          return false;
+        else
+          return isPrime(n, deviser + 1)
+      }
+
+
     }
 
+    isPrime(n, 2);
 
   }
 
