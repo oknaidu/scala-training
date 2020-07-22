@@ -14,7 +14,7 @@ object OOBasics extends App {
 
 // lets create a class
 //class Person(name: String, age: Int) //constructor
-// name and age are class parameters but its not a class member with dot parameter
+// name and age are class parameters but its not a class FIELDS THAT CAN BE ACCESSED with dot parameter
 
 
 // class parameters are NOT FIELDS
@@ -26,10 +26,12 @@ class Person(name: String, val age: Int) { //curly braces are class delimiters
 
   val x = 2 // value/var definitions are fields, can be accessed using dot operator
 
-  println("class") // this gets printed when we create a new class. That is because the entire block is evaluated
-
   //functions defined inside a class definition are called methods
   def greet : Unit = println(s"Hi, my name is $name")
+
+  //EXPRESSIONS
+  println("class") // this gets printed when we create a new class. That is because the entire block is evaluated
+
   //within the class definition class parameters are accessible
 
   //def greet(name: String): Unit = println(s"$name says : hello $name")
