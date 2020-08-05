@@ -3,12 +3,12 @@ package exercises.oop
 object ObjectBasics extends App {
 
   /**
-   * 1) implement class Writer.java(present in the same package) in Scala
+   * 1) implement class Writer.scala(present in the same package) in Scala
    */
 
 
   /**
-   * 2) implement class Novel.java(present in the same package) in Scala
+   * 2) implement class Novel.scala(present in the same package) in Scala
    */
 
 
@@ -22,12 +22,12 @@ object ObjectBasics extends App {
 
   class Counter(val count: Int){
 
-    def inc: Counter = ???
+    def inc: Counter = new Counter(count+1)
 
-    def dec: Counter = ???
+    def dec: Counter = new Counter(count-1)
 
-    def inc(count: Int) : Counter = ???
+    def inc(count: Int) : Counter = new Counter(count+this.count)
 
-    def dec(count: Int): Counter = ???
+    def dec(count: Int): Counter = new Counter(this.count-count)
   }
 }
